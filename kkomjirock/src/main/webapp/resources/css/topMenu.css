@@ -1,0 +1,38 @@
+/* Basic styling */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;    
+}
+
+body {
+	font-family: sans-serif; 
+	background: rgb(13,13,13); 
+  }
+
+
+.navbar {
+    background: rgb(27, 27, 27);
+}
+.nav li > a {
+    color: white !important;
+}
+
+a:hover {
+	text-decoration: underline; 
+	
+}
+.logo img{
+	margin-top:5px;
+	margin-left:-5px;
+	display:block;
+    width:50px;
+    
+  }
+  
+#myNavbar {
+	font-size: 15px;
+}
+  
+
+  
