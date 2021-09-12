@@ -19,7 +19,7 @@
 		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy">
 			<!-- value="com.mysql.cj.jdbc.Driver" -->
 		</property>	
-		<property name="url" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/bookstoredb?autoReconnect=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowMultiQueries=true"></property>
+		<property name="url" value="jdbc:log4jdbc:mysql://127.0.0.1:3306/kkomjirock?autoReconnect=true&amp;useSSL=false&amp;serverTimezone=UTC&amp;allowMultiQueries=true"></property>
 		<property name="username" value="bandmaster"></property>
 		<property name="password" value="1111"></property>
 	</bean>
@@ -44,6 +44,8 @@
 	</bean>
 	
 	<!-- Bean 등록 -->
+	<context:component-scan base-package="com.kkomjirock.web.news.dao"></context:component-scan>
+	<context:component-scan base-package="com.kkomjirock.web.news.service"></context:component-scan>
 	
 	
 	<!-- AOP 설정 -->
