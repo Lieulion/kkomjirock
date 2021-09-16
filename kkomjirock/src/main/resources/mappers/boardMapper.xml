@@ -27,9 +27,8 @@
 
 	<insert id="insertBoard" parameterType="com.kkomjirock.web.news.dto.BoardVO">
 		INSERT INTO TBL_BOARD (CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT)
-		VALUES (
-			#{cate_cd}, #{title}, #{content}, #{tag}, 0, #{reg_id}, now(), now()
-		<!--  카테고리		 제목			게시글		태그	 카운트	작성자	작성일	수정일	-->
+		VALUES (#{cate_cd}, #{title}, #{content}, #{tag}, 0, #{reg_id}, now(), now()
+			<!--  카테고리		 제목			게시글		태그	 카운트	작성자	작성일	수정일	-->
 		)
 	</insert>
 

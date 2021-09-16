@@ -22,15 +22,15 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-					<li class="logo"><a href="${path}"><img src="../resources/css/frontLogo.png" ></a></li>
+					<li class="logo"><a href="${path}/#home"><img src="../resources/css/frontLogo.png" ></a></li>
 			</div>
 			
 			<div>
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
 					
-						<li class="item"><a href="#home"><b>Home</b></a></li>
-						<li class="item"><a href="#about">About</a></li>
+						<li class="item"><a href="${path }/#home"><b>Home</b></a></li>
+						<li class="item"><a href="${path }/#about">About</a></li>
 						<li class="item"><a href="${path}/news/newsList">News</a></li>	
 						
 						

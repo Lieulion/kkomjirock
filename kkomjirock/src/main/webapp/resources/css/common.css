@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+
+*{
+	font-family: sans-serif;
+	margin: 5px;
+	padding: 5px;
+		}
+		
+body{
+	background: rgb(13, 13, 13) !important;
+}
+th{
+	color:#fff;
+}

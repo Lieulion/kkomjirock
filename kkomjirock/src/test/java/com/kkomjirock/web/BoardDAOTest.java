@@ -65,7 +65,7 @@ private static final Logger logger = LoggerFactory.getLogger(BoardDAOTest.class)
 
 	
 
-	@Test @Ignore
+	@Test 
 	public void testInsertBoard() throws Exception {
 		BoardVO boardVO = new BoardVO();
 		boardVO.setCate_cd("1");
