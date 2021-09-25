@@ -13,3 +13,8 @@ create table tbl_board(
   edit_dt  date          not null comment '수정일'
 ); 
 
+어드민 ID / PW 저장테이블
+CREATE TABLE `kkomjirock`.`new_table` (
+  `admin_ID` VARCHAR(20) NOT NULL,
+  `admin_PW` VARCHAR(20) NOT NULL,
+  PRIMARY KEY (`admin_ID`));

@@ -17,6 +17,7 @@ body {
 .nav li > a {
     color: white !important;
 }
+.nav 
 
 a:hover {
 	text-decoration: underline; 
@@ -30,11 +31,16 @@ a:hover {
 	margin-left:-5px;
 	display:block;
     width:50px;
+    float:left;
     
   }
   
 #myNavbar {
 	font-size: 15px;
+}
+#login {
+	vertical-align:middle;
+	display:block;
 }
   
 

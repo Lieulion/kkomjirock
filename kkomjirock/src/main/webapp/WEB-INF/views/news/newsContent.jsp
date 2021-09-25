@@ -25,7 +25,13 @@
 		url = url + "&mode=edit";	//신규입력인지 수정인지 구분하기 위한 인자.
 		location.href = url;
 	});
-
+	
+	//삭제 버튼 클릭
+	$(document).on('click', '#btnDelete', function(){
+	    var url = "${Path}/news/deleteBoard";
+	    url = url + "?bid=" + ${boardContent.bid};
+			location.href = url;
+		});
 
 
 </script>

@@ -12,7 +12,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.kkomjirock.web.news.dto.BoardVO;
 import com.kkomjirock.web.news.service.BoardService;
-
+import com.kkomjirock.web.common.Pagination;
 
 @Controller
 @RequestMapping(value = "/news")
@@ -23,9 +23,19 @@ public class BoardController {
 	
 	//뉴스 리스트 가져오기
 	@RequestMapping(value = "/newsList", method = RequestMethod.GET) ///getBoardList
-	public String getBoardList(Model model) throws Exception {
-		
-		model.addAttribute("newsList", boardService.getBoardList());
+	public String getBoardList(Model model,
+								@RequestParam(required = false, defaultValue = "1") int page, 
+								@RequestParam(required = false, defaultValue = "1") int range) throws Exception {
+
+		//전체 게시글 개수
+		int listCnt = boardService.getBoardListCnt();
+		//Pagination 객체생성
+		Pagination pagination = new Pagination();
+		pagination.pageInfo(page, range, listCnt);
+
+		model.addAttribute("pagination", pagination);
+		model.addAttribute("newsList", boardService.getBoardList(pagination));
+
 		return "news/newsList";
 
 	}
@@ -67,6 +77,13 @@ public class BoardController {
 		return "news/newsForm";
 
 	}
+	@RequestMapping(value = "/deleteBoard", method = RequestMethod.GET)
+	public String deleteBoard(RedirectAttributes rttr, @RequestParam("bid") int bid) throws Exception {
+		boardService.deleteBoard(bid);
+		return "redirect:/news/newsList";
+	}
+
+
 
 
 

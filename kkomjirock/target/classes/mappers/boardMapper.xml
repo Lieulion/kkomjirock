@@ -10,6 +10,8 @@
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
 		FROM
 			TBL_BOARD
+		LIMIT #{startList}, #{listSize}
+
 	</select>
 
 	
@@ -40,13 +42,10 @@
 	</update>
 
 	
-
 	<delete id="deleteBoard" parameterType="int">
 		DELETE FROM TBL_BOARD
 		WHERE BID = #{bid}
 	</delete>
-
-	
 
 	<update id="updateViewCnt" parameterType="com.kkomjirock.web.news.dto.BoardVO">
 		UPDATE TBL_BOARD SET
@@ -54,6 +53,15 @@
 		WHERE
 			BID = #{bid}
 	</update>
+	<!-- paging -->
+	<select id="getBoardListCnt" resultType="int">
+		SELECT
+			count(*) as listCnt
+		FROM
+			TBL_BOARD
+	</select>
+
+
 
 	
 
