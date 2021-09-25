@@ -9,7 +9,6 @@
 	<title>board</title>
 	<!--  BootStrap & etc -->
 	<%@ include file="../include/header.jsp" %>	
-	<!-- jQuery -->	
 	
 	
 	<style>
@@ -18,6 +17,12 @@
 		}
 		
 		body{
+			padding-top: 70px;
+
+			padding-bottom: 30px;
+
+
+
 		    background: rgb(13, 13, 13) !important;
 		}
 		th{
@@ -32,12 +37,56 @@
 		#newsTable{
 			color:#fff;
 		}
+		.board_title {
+			font-weight : 700;
+			font-size : 22pt;
+			margin : 10pt;	
+		}
+		
+		.board_info_box {
+			color : #6B6B6B;
+			margin : 10pt;
+		}
+		
+		.board_author {
+			font-size : 10pt;
+			margin-right : 10pt;
+		}
+		
+		.board_date {
+			font-size : 10pt;
+		}
+		
+		.board_content {
+			color : #444343;
+			font-size : 12pt;
+			margin : 10pt;
+		}
+		
+		.board_tag {
+			font-size : 11pt;
+			margin : 10pt;
+			padding-bottom : 10pt;
+		}
+
+
+
 	</style>
 	<script>
 		$(document).on('click', '#btnWriteForm', function(e){
 			e.preventDefault();
 			location.href = "${Path}/news/newsForm";
 		});
+		
+		function fn_contentView(bid){
+			var url = "${Path}/news/getBoardContent";
+			url = url + "?bid="+bid;
+			location.href = url;
+
+		}
+
+
+
 	</script>
 
 
@@ -58,6 +107,7 @@
 						<col style="width:10%;" />
 						<col style="width:10%;" />
 					</colgroup>
+					
 					<thead>
 						<tr>
 							<th>NO</th>
@@ -78,11 +128,18 @@
 								<c:forEach var="list" items="${newsList}">
 									<tr>
 										<td><c:out value="${list.bid}"/></td>
-										<td><c:out value="${list.title}"/></td>
+										<td>
+											<a href="#" onClick="fn_contentView(<c:out value="${list.bid}"/>)">										
+												<c:out value="${list.title}"/>
+											</a>
+										</td>	
 										<td><c:out value="${list.reg_id}"/></td>
 										<td><c:out value="${list.view_cnt}"/></td>
 										<td><c:out value="${list.reg_dt}"/></td>
-									</tr>
+										</tr>
+
+
+
 								</c:forEach>
 							</c:when>
 						</c:choose>

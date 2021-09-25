@@ -10,5 +10,8 @@ public interface BoardService {
 	public List<BoardVO> getBoardList() throws Exception;
 	//글쓰기 
 	public void insertBoard(BoardVO boardVO) throws Exception;	
-
+	//조회수 +1
+	public BoardVO getBoardContent(int bid) throws Exception;
+	//수정
+	public void updateBoard(BoardVO boardVO) throws Exception;
 }
