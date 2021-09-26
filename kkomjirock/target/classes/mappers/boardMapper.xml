@@ -5,6 +5,7 @@
     
 
 <mapper namespace="com.kkomjirock.web.news.mappers.boardMapper">
+
 	<select id="getBoardList" resultType="com.kkomjirock.web.news.dto.BoardVO">
 		SELECT
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
@@ -13,6 +14,7 @@
 			TBL_BOARD
 					
 		LIMIT #{startList}, #{listSize}
+		
 	</select>
 
 
