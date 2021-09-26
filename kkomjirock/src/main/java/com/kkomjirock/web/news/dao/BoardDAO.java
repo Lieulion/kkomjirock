@@ -2,11 +2,12 @@ package com.kkomjirock.web.news.dao;
 
 import java.util.List;
 
-import com.kkomjirock.web.news.dto.BoardVO;
 import com.kkomjirock.web.common.Pagination;
+import com.kkomjirock.web.news.dto.BoardVO;
+
 public interface BoardDAO {
 	
-	public List<BoardVO> getBoardList(Pagination pagination) throws Exception;
+	public List<BoardVO> getBoardList(Pagination pagination)throws Exception;
 
 	public BoardVO getBoardContent(int bid) throws Exception;
 	

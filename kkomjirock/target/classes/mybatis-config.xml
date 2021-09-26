@@ -8,6 +8,7 @@
  -->
 	<typeAliases>
 		<typeAlias type="com.kkomjirock.web.news.dto.BoardVO" alias="boardVO"/>
+		
 	</typeAliases>
 
 </configuration>

@@ -7,8 +7,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.kkomjirock.web.news.dto.BoardVO;
 import com.kkomjirock.web.common.Pagination;
+import com.kkomjirock.web.news.dto.BoardVO;
 
 
 
@@ -22,7 +22,7 @@ public class BoardDAOImpl implements BoardDAO {
 	
 	@Override
 	public List<BoardVO> getBoardList(Pagination pagination) throws Exception {
-		return sqlSession.selectList("com.kkomjirock.web.news.mappers.boardMapper.getBoardList");
+		return sqlSession.selectList("com.kkomjirock.web.news.mappers.boardMapper.getBoardList", pagination);
 	}
 
 

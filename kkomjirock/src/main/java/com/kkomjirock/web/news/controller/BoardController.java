@@ -24,11 +24,12 @@ public class BoardController {
 	//뉴스 리스트 가져오기
 	@RequestMapping(value = "/newsList", method = RequestMethod.GET) ///getBoardList
 	public String getBoardList(Model model,
-								@RequestParam(required = false, defaultValue = "1") int page, 
-								@RequestParam(required = false, defaultValue = "1") int range) throws Exception {
+								@RequestParam(value = "page", required = false, defaultValue = "1") int page, 
+								@RequestParam(value = "page", required = false, defaultValue = "1") int range) throws Exception {
 
 		//전체 게시글 개수
 		int listCnt = boardService.getBoardListCnt();
+		
 		//Pagination 객체생성
 		Pagination pagination = new Pagination();
 		pagination.pageInfo(page, range, listCnt);

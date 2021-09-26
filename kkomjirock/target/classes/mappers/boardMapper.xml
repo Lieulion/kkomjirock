@@ -8,13 +8,13 @@
 	<select id="getBoardList" resultType="com.kkomjirock.web.news.dto.BoardVO">
 		SELECT
 			BID, CATE_CD, TITLE, CONTENT, TAG, VIEW_CNT, REG_ID, REG_DT, EDIT_DT
+			
 		FROM
 			TBL_BOARD
+					
 		LIMIT #{startList}, #{listSize}
-
 	</select>
 
-	
 
 	<select id="getBoardContent" resultType="com.kkomjirock.web.news.dto.BoardVO" parameterType="com.kkomjirock.web.news.dto.BoardVO">
 		SELECT
@@ -53,13 +53,14 @@
 		WHERE
 			BID = #{bid}
 	</update>
-	<!-- paging -->
+	
 	<select id="getBoardListCnt" resultType="int">
 		SELECT
 			count(*) as listCnt
 		FROM
 			TBL_BOARD
 	</select>
+	
 
 
 

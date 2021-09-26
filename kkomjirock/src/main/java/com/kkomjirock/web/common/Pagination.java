@@ -1,5 +1,6 @@
 package com.kkomjirock.web.common;
 
+
 import lombok.Data;
 
 @Data
@@ -16,7 +17,8 @@ public class Pagination {
 	private int endPage;
 	private boolean prev;
 	private boolean next;
-
+	
+	
 	public void pageInfo(int page, int range, int listCnt) {
 		
 		this.page = page;
@@ -24,7 +26,8 @@ public class Pagination {
 		this.listCnt = listCnt;
 
 		//전체 페이지수 
-		this.pageCnt = (int)Math.ceil((double)listCnt/listSize);
+		this.pageCnt = (int) Math.ceil((double)listCnt/listSize);
+
 
 		//시작 페이지
 		this.startPage = (range - 1) * rangeSize + 1 ;
@@ -34,7 +37,7 @@ public class Pagination {
 
 		//게시판 시작번호
 		this.startList = (page - 1) * listSize;
-
+		
 		//이전 버튼 상태
 		this.prev = range == 1 ? false : true;
 
